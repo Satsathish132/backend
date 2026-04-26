@@ -3,15 +3,18 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const db = await mysql.createConnection({
+const db = mysql.createPool({
   host: process.env.MYSQLHOST,
   user: process.env.MYSQLUSER,
   password: process.env.MYSQLPASSWORD,
   database: process.env.MYSQLDATABASE,
-  port: process.env.MYSQLPORT
+  port: process.env.MYSQLPORT,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-console.log("DB Connected ✅");
+console.log("DB Pool Created ✅");
 
 const ensureOtpColumn = async () => {
   try {

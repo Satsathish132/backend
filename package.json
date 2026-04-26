@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "db.js",
+  "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "type": "module"
+    "start": "node server.js"
+    
   },
   "keywords": [],
   "author": "",
