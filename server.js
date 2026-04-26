@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/auth.js";
-import changePasswordRoutes from "./routes/changePassword.js";
+import changePasswordRoutes from "./routes/changepassword.js";
 
 dotenv.config();
 
