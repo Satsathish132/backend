@@ -4,7 +4,8 @@
   "description": "",
   "main": "db.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "type": "module"
   },
   "keywords": [],
   "author": "",

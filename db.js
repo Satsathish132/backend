@@ -3,23 +3,15 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const mysql = require("mysql2");
-
-const connection = mysql.createConnection({
-  host: process.env.MYSQLHOST,      // mysql.railway.internal
+const db = await mysql.createConnection({
+  host: process.env.MYSQLHOST,
   user: process.env.MYSQLUSER,
   password: process.env.MYSQLPASSWORD,
   database: process.env.MYSQLDATABASE,
   port: process.env.MYSQLPORT
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.error("DB ERROR:", err);  // Don't crash
-  } else {
-    console.log("DB Connected ✅");
-  }
-});
+console.log("DB Connected ✅");
 
 const ensureOtpColumn = async () => {
   try {
